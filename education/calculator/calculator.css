@@ -1,0 +1,86 @@
+
+.wrapper {
+margin-top: 50px;
+display: flex;
+justify-content: center;
+}
+
+.mainContainer {
+border: 1px solid black;
+background-color: lightgray;
+padding: 5px; 
+margin-bottom: 5px; 
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+width: 450px;
+height: 320px;
+border-radius: 8px;
+}
+
+.display {
+border: 1px solid black;
+margin-bottom: 10px;
+padding: 5px;
+height: 60px;
+font-weight: bold;
+background-color: black;
+color: white;
+text-align: right;
+border-radius: 8px;
+vertical-align: middle;
+font-size: large;
+}
+
+.innerWrapper {
+padding: 3px;
+border: 1px solid grey;
+border-radius: 8px;
+background-color: darkgray;
+}
+
+.btns {
+font-size: large;
+width: 100px;
+text-align: center;
+height: 40px;
+}
+
+
+.operBtns {
+background-color: black;
+color: white;
+border-radius: 25px;
+}
+
+.powerBtns {
+background-color: orange;
+color: white;
+border-radius: 25px;
+}
+
+.numberBtns {
+background-color: white;
+color: black;
+border-radius: 25px;
+}
+
+
+
+#btnAc {
+width: 205px;
+}
+
+#btnEquals {
+width: 205px;
+}
+
+#zeroBtn {
+width: 205px;
+}
+
+
+#other {
+text-align: center;
+}

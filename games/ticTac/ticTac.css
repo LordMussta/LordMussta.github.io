@@ -1,0 +1,93 @@
+
+	.grid {
+	text-align: center;
+	background-color: lightblue;
+	}
+	
+	.board {
+	height: 100px;
+	width: 100px;
+	background: #191970;
+	color: white;
+	text-align: center;
+	font-size: 36px;
+	padding-top: 20px;
+	}
+	
+	.buttonBox {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	padding-top: 15px;
+	}
+	
+	.scores {
+	margin: 10px;
+	padding: 0px;
+	font-family: 'Times New Roman';
+  	line-height: 40px;
+  	height: 40px;
+	}
+	
+	.displayPlayer {
+	margin: 5px;
+	}
+	
+	#A1 {
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	}
+	
+	#B1 { 
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	}
+	
+	#C1 {
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+	}
+	
+	#A2 {
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	}
+	
+	#B2 {
+	border: 1px solid white;
+	}
+	
+	#C2 {
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	}
+	
+	#A3 {
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+	}
+	
+	#B3 {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	}
+	
+	#C3 {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	}
+	
+	.inactive {
+	background-color: lightblue;
+	font-size: large;
+	}
+
+	.active {
+	background-color: #5B90F6;
+	font-weight: bold;
+	font-size: large;
+	}

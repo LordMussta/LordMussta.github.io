@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<title>Games - The Macey Portfolio</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
+	<link rel="icon" href="/images/iconFile.ICO" type="image/ico" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="threeRooms.css">
+</head>
+
+
+<body id="body">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
+	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/games.html">Games</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/education.html">Education</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/about.html">About</a> 
+			</li>
+			<li>
+				<h4><span style="color: white;"></span></h4>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="jumbotron">
+	<div style="text-align: center" class="container">
+		<h1>Thieves Training</h1>
+	</div>
+</div>
+
+<!-- navbar and title above this point -->
+	<div id="main-container">
+		<div id="display"></div>
+		<input type="text" id="input" value="" />
+		<button id="btn1">ok</button>
+		<div id="sub-container">
+			<p><b>Location:</b> 
+				<span id="displayLocation"></span>
+			</p>
+			<p><b>Inventory:</b>
+				<span id="inventory"></span>
+			</p>
+			<p><b>Wallet:</b> 
+				<span id="wallet"></span>
+			</p>
+			<p><b>Health:</b>
+			<span id="health"></span>/100
+			</p>
+			<p><b>Warning Message:</b>
+				<span id="warning"></span>
+			</p>
+					</p>
+			<p><b>Timer:</b>
+				<span id="displayTimer"></span>
+			</p>
+		</div>
+	</div>
+	<div id="instructionsDiv">
+		<button id="btn3">Show Commands</button>
+		<div id="instructions" style="display: none">
+			<p><b>List of commands:</b></p>
+			<p>DOOR 'X' - to exit through a door ['d1'].</p>
+			<p>LOOK AROUND - to see what furniture items are in a room ['la'].</p>
+			<p>INVESTIGATE 'FURNITURE' - to look at what is on/inside an piece of furniture ['i sofa'].</p>
+			<p>TAKE 'ITEM' - to pick up an item and put it in your inventory ['t ham'].</p>
+			<p>DRINK 'ITEM' - to drink a liquid in your inventory ['d milk'].</p>
+			<p>EAT 'ITEM' - to consume food in your inventory ['e ham']</p>
+			<p>TALK TO 'PERSON' ['t to john']</p>
+			<p>READ 'ITEM' ['r bible']</p>
+		</div>
+	</div>
+	<div id="highScores">
+		<h2 style="text-align: center; color: white;">High Scores</h2>
+	</div>
+	<div class="container">
+		<table>
+			<tr>
+				<th>No.</td>
+				<th>User</th>
+				<th>Score</th>
+			</tr>
+			<tr>
+				<td>1.</td>
+				<td id="name1"></td>
+				<td id="score1"></td>
+			</tr>
+			<tr>
+				<td>2.</td>
+				<td id="name2"></td>
+				<td id="score2"></td>
+			</tr>
+			<tr>
+				<td>3.</td>
+				<td id="name3"></td>
+				<td id="score3"></td>
+			<tr>
+			<tr>
+				<td>4.</td>
+				<td id="name4"></td>
+				<td id="score4"></td>
+			</tr>
+			<tr>
+				<td>5.</td>
+				<td id="name5"></td>
+				<td id="score5"></td>
+			</tr>
+			<tr>
+				<td>6.</td>
+				<td id="name6"></td>
+				<td id="score6"></td>
+			</tr>
+			<tr>
+				<td>7.</td>
+				<td id="name7"></td>
+				<td id="score7"></td>
+			</tr>
+			<tr>
+				<td>8.</td>
+				<td id="name8"></td>
+				<td id="score8"></td>
+			</tr>
+			<tr>
+				<td>9.</td>
+				<td id="name9"></td>
+				<td id="score9"></td>
+			</tr>
+			<tr>
+				<td>10.</td>
+				<td id="name10"></td>
+				<td id="score10"></td>
+			</tr>
+		</table>
+	</div>
+
+<!-- footer and files below this point -->
+
+<div style="padding-bottom: 100px"></div>
+
+<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
+	<b>The Macey Portfolio</b>
+</footer>
+
+	<script src="allRooms.js"></script>
+	<script src="entryRoom.js"></script>
+	<script src="highScores.js"></script>
+	<script src="kitchen.js"></script>
+	<script src="loungeRoom.js"></script>
+	<script src="study.js"></script>
+	<script src="timer.js"></script>
+	<script src="user.js"></script>
+	<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

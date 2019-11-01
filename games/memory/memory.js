@@ -10,8 +10,50 @@ var img9 = document.getElementById("img9");
 var img10 = document.getElementById("img10");
 var img11 = document.getElementById("img11");
 var img12 = document.getElementById("img12");
+var img13 = document.getElementById("display");
+
+let cards = ["8H", "9S", "10H", "JS", "QH", "KS"]
+
+function shuffle(array) {
+let randomNumber = Math.floor((Math.random())*(array.length))
+let result = "img13.src='cards/"+cards[randomNumber]+".jpg'";
+eval(result)
+}
+
+let displayedCardsOrder = []
 
 
+function shuffleCards(array) {
+let randomNumber = Math.floor((Math.random())*(array.length))
+	//while the sum of the new array list is not equal to the new array list - keep picking new random numbers and adding them to the array
+let shuffledDeck = []
+
+//sum of all items in the current array
+let sum;
+function calcSum(shuffledDeck) {
+	shuffledDeck.forEach(function(item){
+	sum += item; 
+	return sum
+	})
+}
+
+	while (sum != ) {
+	
+	//if the random number chosen has is already in the new array, then pick a new random number
+		if () {
+		
+		} 
+	}
+}
+
+let shuffleBtn = document.getElementById("shuffleBtn");
+shuffleBtn.addEventListener("click", function() {shuffleCards})
+
+function init() {
+
+}
+
+shuffle(cards)
 
 img1.addEventListener("click", function() {
 	img1.src ="cards/2H.jpg";		
