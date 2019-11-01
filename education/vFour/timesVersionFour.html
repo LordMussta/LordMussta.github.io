@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<title>Times Tables - Version Four</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css" />
+</head>
+
+
+<body style="background-color: lightsteelblue">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
+	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/games.html">Games</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/education.html">Education</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/about.html">About</a> 
+			</li>
+			<li>
+				<h4><span style="color: white;"></span></h4>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+
+<div class="jumbotron">
+	<div style="text-align: center" class="container">
+		<h1>Times Tables - Version Four</h1>
+	</div>
+</div>
+
+<!--Fixed Navbar and Title above-->
+
+
+<!-- 3x Times Tables-->
+
+<div class="w3-display-container">
+	<div>
+		<div class="w3-card-2 w3-padding" id=“firstQuestion3”>
+			<h3>Question Number: <i id="questionCounter3">1</i><br>
+			Your Score is: <b id="score3">0</b></h3>
+		</div>
+	</div>
+	<div class="w3-card-4 w3-padding" style="width:%">
+		<p><b id="question3">What is 3*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField3" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton3" onclick="checkAnswer3()">Submit</button>
+		<p id="answer3"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion3" onclick="moveToNextQuestion3()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding" style="width:%">
+		<p id="warningMessage3"></p>
+		<b>
+			<p id="totalScore3"></p>
+			<p id="result3"></p>
+		</b>
+	</div>
+</div>
+
+
+
+<!-- 4x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" style="width:%" id=“firstQuestion4”>
+		<h3>Question Number: <i id="questionCounter4">1</i><br>
+		Your Score is: <b id="score4">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding" style="width:%">
+		<p><b id="question4">What is 4*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField4" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton4" onclick="checkAnswer4()">Submit</button>
+		<p id="answer4"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion4" onclick="moveToNextQuestion4()">Next Question</button>
+		</div>
+	<div class="w3-card-4 w3-padding" style="width:%">
+		<p id="warningMessage4"></p>
+		<b>
+			<p id="totalScore4"></p>
+			<p id="result4"></p>
+		</b>
+	</div>
+</div>
+
+
+<!-- 5x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion5”>
+		<h3>Question Number: <i id="questionCounter5">1</i><br>
+		Your Score is: <b id="score5">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question5">What is 5*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField5" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton5" onclick="checkAnswer5()">Submit</button>
+		<p id="answer5"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion5" onclick="moveToNextQuestion5()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage5"></p>
+		<b><p id="totalScore5"></p>
+		<p id="result5"></p></b>
+	</div>
+</div>
+
+
+<!-- 6x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion6”>
+		<h3>Question Number: <i id="questionCounter6">1</i><br>
+		Your Score is: <b id="score6">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question6">What is 6*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField6" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton6" onclick="checkAnswer6()">Submit</button>
+		<p id="answer6"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion6" onclick="moveToNextQuestion6()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage6"></p>
+		<b><p id="totalScore6"></p>
+		<p id="result6"></p></b>
+	</div>
+</div>
+
+<!-- 7x Times Tables -->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion7”>
+		<h3>Question Number: <i id="questionCounter7">1</i><br>
+		Your Score is: <b id="score7">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question7">What is 7*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField7" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton7" onclick="checkAnswer7()">Submit</button>
+		<p id="answer7"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion7" onclick="moveToNextQuestion7()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage7"></p>
+		<b><p id="totalScore7"></p>
+		<p id="result7"></p></b>
+	</div>
+</div>
+
+<!-- 8x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion8”>
+		<h3>Question Number: <i id="questionCounter8">1</i><br>
+		Your Score is: <b id="score8">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question8">What is 8*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField8" value="" />
+		
+		<button id="submitButton8" onclick="checkAnswer8()">Submit</button>
+		<p id="answer8"></p>
+		<button id="nextQuestion8" onclick="moveToNextQuestion8()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage8"></p>
+		<b><p id="totalScore8"></p>
+		<p id="result8"></p></b>
+	</div>
+</div>
+
+
+<!-- 9x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion9”>
+		<h3>Question Number: <i id="questionCounter9">1</i><br>
+		Your Score is: <b id="score9">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question9">What is 9*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField9" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton9" onclick="checkAnswer9()">Submit</button>
+		<p id="answer9"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion9" onclick="moveToNextQuestion9()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage9"></p>
+		<b><p id="totalScore9"></p>
+		<p id="result9"></p></b>
+	</div>
+</div>
+
+<!-- 10x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion10”>
+		<h3>Question Number: <i id="questionCounter10">1</i><br>
+		Your Score is: <b id="score10">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question10">What is 10*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField10" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton10" onclick="checkAnswer10()">Submit</button>
+		<p id="answer10"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion10" onclick="moveToNextQuestion10()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage10"></p>
+		<b><p id="totalScore10"></p>
+		<p id="result10"></p></b>
+	</div>
+</div>
+
+
+<!-- 11x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion11”>
+		<h3>Question Number: <i id="questionCounter11">1</i><br>
+		Your Score is: <b id="score11">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question11">What is 11*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField11" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton11" onclick="checkAnswer11()">Submit</button>
+		<p id="answer11"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion11" onclick="moveToNextQuestion11()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage11"></p>
+		<b><p id="totalScore11"></p>
+		<p id="result11"></p></b>
+	</div>
+</div>
+
+
+<!-- 12x Times Tables-->
+<div>
+	<div class="w3-card-2 w3-padding" id=“firstQuestion12”>
+		<h3>Question Number: <i id="questionCounter12">1</i><br>
+		Your Score is: <b id="score12">0</b></h3>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p><b id="question12">What is 12*1?</b></p>
+		<p>Please type your answer:</p>
+		<input type="number" id="inputField12" value="" />
+		
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="submitButton12" onclick="checkAnswer12()">Submit</button>
+		<p id="answer12"></p>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="nextQuestion12" onclick="moveToNextQuestion12()">Next Question</button>
+	</div>
+	<div class="w3-card-4 w3-padding">
+		<p id="warningMessage12"></p>
+		<b><p id="totalScore12"></p>
+		<p id="result12"></p></b>
+	</div>
+</div>
+
+<script src="timesVersionFour.js" type="text/javascript"></script>
+
+<!-- Fixed Footer below-->
+<div style="padding-bottom: 100px"></div>
+
+<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
+	<b>The Macey Portfolio</b>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

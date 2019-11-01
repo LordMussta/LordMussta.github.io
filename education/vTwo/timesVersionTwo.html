@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<title>Times Tables - Version Two</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+</head>
+
+
+<body style="background-color: lightsteelblue">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
+	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/games.html">Games</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/education.html">Education</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/about.html">About</a> 
+			</li>
+			<li>
+				<h4><span style="color: white;"></span></h4>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+
+<div class="jumbotron">
+	<div style="text-align: center" class="container">
+		<h1>Times Tables - Version Two</h1>
+	</div>
+</div>
+
+<!--Fixed Navbar and Title above-->
+
+
+<div class="container">
+	<div>
+		<p><b>Total Score: <i id="totalScoreDisplay"></i></b></p>
+	</div>
+	
+	<div>
+		<p>1) 7 * 1 = <input type="number" id="sum1" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum1Submit" onclick="firstSum()">Submit</button>
+		<i id="sum1Output"></i>
+		</p>
+	</div>
+	
+	
+	<div>
+		<p>2) 7 * 2 = <input type="number" id="sum2" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum2Submit" onclick="secondSum()">Submit</button>
+		<i id="sum2Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>3) 7 * 3 = <input type="number" id="sum3" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum3Submit" onclick="thirdSum()">Submit</button>
+		<i id="sum3Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>4) 7 * 4 = <input type="number" id="sum4" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum4Submit" onclick="fourthSum()">Submit</button>
+		<i id="sum4Output"></i>
+		</p>
+	</div>
+	
+	
+	<div>
+		<p>5) 7 * 5 = <input type="number" id="sum5" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum5Submit" onclick="fifthSum()">Submit</button>
+		<i id="sum5Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>6) 7 * 6 = <input type="number" id="sum6" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum6Submit" onclick="sixthSum()">Submit</button>
+		<i id="sum6Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>7) 7 * 7 = <input type="number" id="sum7" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum7Submit" onclick="seventhSum()">Submit</button>
+		<i id="sum7Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>8) 7 * 8 = <input type="number" id="sum8" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum8Submit" onclick="eigthSum()">Submit</button>
+		<i id="sum8Output"></i>
+	</div>
+	
+	
+	<div>
+		<p>9) 7 * 9 = <input type="number" id="sum9" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum9Submit" onclick="ninthSum()">Submit</button>
+		<i id="sum9Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>10) 7 * 10 = <input type="number" id="sum10" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum10Submit" onclick="tenthSum()">Submit</button>
+		<i id="sum10Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>11) 7 * 11 = <input type="number" id="sum11" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum11Submit" onclick="eleventhSum()">Submit</button>
+		<i id="sum11Output"></i></p>
+	</div>
+	
+	
+	<div>
+		<p>12) 7 * 12 = <input type="number" id="sum12" value=""></input>
+		<button class="btn btn-primary btn-sm" style="border-radius: 12px;" id="sum12Submit" onclick="twelfthSum()">Submit</button>
+		<i id="sum12Output"></i>
+	</div>
+</div>
+
+<script src="timesVersionTwo.js" type="text/javascript"></script>
+
+<!-- Fixed Footer below-->
+<div style="padding-bottom: 100px"></div>
+
+<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
+	<b>The Macey Portfolio</b>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

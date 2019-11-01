@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<title>Draw-A-Pic</title>
+<link rel="stylesheet" href="etch.css" type="" />
+</head>
+<body>
+<a href="/education.html">Back</a>
+	
+		<h1 id="mainTitle" class="center" onmouseover="changeColour();" onmouseout="changeColourAgain();">Draw-A-Pic</h1>
+		<p class="center" id="instructions">Create a pad, pick a colour and start drawing</p>
+	
+	<!--<p>Rows:
+		<input id="input1" type="number" placeholder="Enter the number of desired rows" value="" style="width: 200px; height: 30px;" />
+	</p>
+	<p>Columns:
+		<input type="number" id="input2" placeholder="Enter the desired width" style="width: 200px; height: 30px;" value="" />
+	</p>-->
+	<div class="wrapper">
+		<button style="font-size: large; margin: 10px;" onclick="btn1Action()">Create Sketch Pad</button>
+		<button style="font-size: large; margin: 10px;" onclick="btn2Action()">Clear Sketch Pad</button>
+	</div>
+	<div class="wrapper">
+		<button onclick="btnWhiteAction()" style="font-size:large; margin: 10px; background-color: white; color: white;">....</button>
+		<button onclick="btnBlackAction()" style="font-size:large; margin: 10px;background-color: black">....</button>
+		<button onclick="btnGrayAction()" style="font-size:large; margin: 10px;background-color: gray; color: gray">....</button>
+		<button onclick="btnRedAction()" style="font-size:large; margin: 10px;background-color: red; color: red">....</button>
+		<button onclick="btnBlueAction()" style="font-size:large; margin: 10px;background-color: blue; color: blue">....</button>
+		<button onclick="btnGreenAction()" style="font-size:large; margin: 10px; background-color: green; color: green;">....</button>
+		<button onclick="btnYellowAction()" style="font-size:large; margin: 10px;background-color: yellow; color: yellow;">....</button> 
+		<button onclick="btnOrangeAction()" style="font-size:large; margin: 10px;background-color: orange; color: orange">....</button>
+		<button onclick="btnBrownAction()" style="font-size:large; margin: 10px;background-color: brown; color: brown">....</button>
+		<button onclick="btnPurpleAction()" style="font-size:large; margin: 10px; background-color: purple; color: purple;">....</button>
+		<button onclick="btnPinkAction()" style="font-size:large; margin: 10px;background-color: pink; color: pink">....</button> 
+	
+		
+	
+	</div>
+	<div class="wrapper">
+		<div id="main-container" class="sketchpad" ></div>
+	</div>
+
+	<script src="etch.js" type="text/javascript"></script>
+</body>
+</html>

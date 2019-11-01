@@ -1,0 +1,59 @@
+body {
+    margin: 30px;
+    background-color: rgb(221, 169, 201);
+}
+
+h1 {
+color: brown;
+}
+
+.center {
+    text-align: center
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.sketchpad {
+background-color: lightgray;
+height: 825px;
+width: 830px;
+border: 5px solid black;
+}
+
+.row-class {
+background-color: white;
+height: 25px;
+display: flex;
+flex-direction: row; 
+flex-wrap: nowrap;
+justify-content: center;
+
+}
+
+.column-class {
+background-color:  white;
+border: 1px solid black;
+height: 25px;
+width: 25px;
+align-self: center;
+font-size: 14px;
+}
+
+div.column-class:hover {
+background-color: black;
+}
+
+div.column-class:visited {
+    background-color: aquamarine;
+}
+
+.pen1 {
+    background-color: black;
+}
+
+.pen2 {
+    background-color: white;
+}
