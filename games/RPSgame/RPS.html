@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<title>Rock Paper Scissors - The Macey Portfolio</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />
+<link rel="stylesheet" href="RPS.css" type="text/css" />
+<audio id="coin" src="coinDrop.wav" preload="none"></audio>
+
+
+</head>
+
+
+<body style="background-color: lightsteelblue">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
+	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/games.html">Games</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/education.html">Education</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/about.html">About</a> 
+			</li>
+			<li>
+				<h4><span style="color: white;"></span></h4>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+
+<div class="jumbotron">
+	<div style="text-align: center" class="container">
+		<h1>Rock Paper Scissors</h1>
+	</div>
+</div>
+
+<!--Fixed Navbar and Title above-->
+
+
+<body>
+
+
+<div id="main-container"> <!— open main container —>
+	
+	<div id="header" style="padding: 0px; margin: 0px;"> <!— open header —>
+	<p id="instructions" style="margin-left: 30px; margin-right: 30px; text-align: center; font-style: italic;"></p>
+	</div> <!— close header —>
+	  
+	<div id="game-container"> <!— open game container —>
+		
+		<div id="score-container"> <!— open score-container —>
+			<div class="RPS">
+			<img id="scissorsImage" src="scissors.jpg" style="display: none; width: 100%; height: 100%;" />
+			<img id="paperImage" src="paper.jpg" style="display: none; width: 100%; height: 100%;" />
+			<img id="rockImage" src="rock.jpg" style="display: none; width: 100%; height: 100%;" />
+			</p>
+			</div>
+
+			<div class="RPS">
+			<img id="computerScissorsImage" src="scissors.jpg" style="display: none; width: 100%; height: 100%;" />
+			<img id="computerPaperImage" src="paper.jpg" style="display: none; width: 100%; height: 100%;" />
+			<img id="computerRockImage" src="rock.jpg" style="display: none; width: 100%; height: 100%;" /></p>
+			</div>
+		</div> <!— close score-container —>
+		<p id="winner">-</p>
+
+	</div> <!— close the game-container—>
+
+		
+
+		<div id="buttons-container"> <!— open buttons container  —>
+		<button id="rock" onclick="pressedRock(); soundEffect();">Rock</button>
+		<button id="paper" onclick="pressedPaper(); soundEffect();">Paper</button>
+		<button id="scissors" onclick="pressedScissors(); soundEffect();">Scissors</button>
+		</div> <!— close buttons-container —> 
+
+<div id="A1" style="text-align: center; border-top: 1px solid black; margin-left: 20px; margin-right: 20px;"><h3>Scores:</h3> <!— open  A1 —>
+	<div id="flex-container" style="display: flex; justify-content: space-around; flex-direction: row;">
+			<div id="user" style="background-color: black; color: white; font-weight: bold;">User</div>
+			<div id="computer" style="background-color: black; color: white; font-weight: bold;">Computer</div>
+	</div> <!-- close flex-container -->
+</div> <!-- close A1-->
+<div style="text-align: center;">
+<br />
+<button style="color: red" onclick="reset()">Reset Game</button>
+</div>
+</div> <!-- close the main-container-->
+<!-- Footer -->
+<br>
+<script src="RPS.js" type="text/javascript">
+</script>
+<!-- Fixed Footer below-->
+<div style="padding-bottom: 100px"></div>
+
+<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
+	<b>The Macey Portfolio</b>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

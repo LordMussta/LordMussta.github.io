@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<title>The Macey Portfolio</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+	<script>
+var chaching = new Audio ();
+chaching.src = "/sounds/coin2.wav";
+var reset = new Audio ();
+reset.src = "/sounds/jumpSound.mp3";
+var doorOpen = new Audio ();
+doorOpen.src = "/sounds/door_short.mp3";
+var cheer = new Audio ();
+cheer.src = "/sounds/cheer.wav";
+var boom = new Audio ();
+boom.src = "/sounds/boom.wav";
+</script>
+<link href='https://fonts.googleapis.com/css?family=UnifrakturCook:700' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Freckle Face' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css" />
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+
+
+<body style="background-color: black; height:100%;">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
+	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/games.html">Games</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/education.html">Education</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/about.html">About</a> 
+			</li>
+			<li>
+				<h4><span style="color: white;"></span></h4>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div id="main-container" class="w3-container w3-mobile"> <!-- open window-container-->
+<header>
+	<h1 style="font-family: 'Freckle Face'; font-size: 52px; text-shadow: 2px 2px red; text-align: center; color: white;">Castle of Doom</h1>
+</header>
+	<div id="div1" class="w3-container w3-mobile"> <!-- open main-container-->
+		<div class="w3-container w3-mobile" style="background-color: red; font-family: 'Arvo', serif;"><!-- open location container--><b>Current Location:</b>
+		<i id="location"></i>
+		</div> <!--close location container-->
+		
+		<div id="output" style="background-color: black; color: white; border-style: solid; min-height: 250px; font-family: 'Indie Flower', cursive; font-size: 25px;" class="w3-container w3-mobile"> <!-- open dialogue container-->
+		
+		</div> <!-- close dialogue container-->
+		<div style="background-color: red; border-style: solid;" class="w3-container w3-mobile"><!-- open commands container-->
+		<b style="font-family: 'Arvo', serif;">Available Commands:</b>
+		<i id="commandLine" style="font-family: 'Arvo', serif;"></i>
+		</div> <!--close commands container-->
+		
+		<div class="w3-container w3-mobile"> <!--open user-input container -->
+		<i style="font-family: 'Arvo', serif; color: white;">Please type a command: </i>
+		<input type="text" id="inputField" value="" />
+		<button id="btn1" class="w3-btn w3-orange" onclick="castleEntrance.decision(); doorOpen.play();">Submit</button>
+		<p style="color: red;" id="warningMessage"></p>
+		<br>
+		</div> <!-- close user-input container-->
+	
+		<div class="w3-container w3-display w3-mobile"> <!--open reset-button container-->
+		<button class="w3-button w3-red" id="btn2" onclick="resetGame.decision(); reset.play();"><b>Reset Game</b></button>
+		</div> <!-- close reset-button container-->
+	</div> <!-- close main-container-->
+	<br />	
+	<br />
+</div> <!-- close window-container-->
+
+<script src="castleDoomRemix.js" type="text/javascript"></script>
+<!-- Fixed Footer below-->
+<div style="padding-bottom: 100px"></div>
+
+<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
+	<b>The Macey Portfolio</b>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

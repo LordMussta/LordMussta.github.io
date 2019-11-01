@@ -1,0 +1,39 @@
+body {
+margin: 20px;
+background-color: #202020;
+color: white;
+}
+
+h1 {
+text-align: center;
+}
+
+#main-board {
+display: flex;
+justify-content: center;
+}
+
+#row-1 {
+border: 1px solid black;
+background-color: black;
+min-height: 410px;
+max-width: 800px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+}
+
+img {
+height: 200px;
+width: 130px;
+}
+
+.showCard {
+
+}
+
+.backCard {
+
+}
