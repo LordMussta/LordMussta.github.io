@@ -10,9 +10,159 @@ var img9 = document.getElementById('img9');
 var img10 = document.getElementById('img10');
 var img11 = document.getElementById('img11');
 var img12 = document.getElementById('img12');
-var img13 = document.getElementById('display');
+var img13 = document.getElementById('img13');
+var img14 = document.getElementById('img14');
+var img15 = document.getElementById('img15');
+var img16 = document.getElementById('img16');
+var img17 = document.getElementById('img17');
+var img18 = document.getElementById('img18');
+//var img19 = document.getElementById('display');
+var randomNumber;
 
-let cards = [ '8H', '9S', '10H', 'JS', 'QH', 'KS' ];
+//function init() {}
+
+var deck = [];
+
+function shuffle() {
+	while (19 > deck.length) {
+	randomNumber = getRndInteger(0,18)
+		if (deck.length == 18) {
+			break;
+		} else if (deck.includes(randomNumber)) {
+			continue;
+		} else {
+			deck.push(randomNumber);
+		}
+	}
+	console.log(deck)
+	return deck;
+}
+
+function generateNumber() {
+return Math.floor(Math.random() * 18);
+}
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+//console.log('My shuffled cards:');
+shuffle();
+
+var cardRef = 
+['cards/AH.jpg', 
+'cards/KS.jpg', 
+'cards/QH.jpg',
+'cards/JS.jpg',
+'cards/10H.jpg',
+'cards/9S.jpg',
+'cards/8H.jpg',
+'cards/7S.jpg',
+'cards/6H.jpg',
+'cards/AH.jpg',
+'cards/KS.jpg',
+'cards/QH.jpg',
+'cards/JS.jpg',
+'cards/10H.jpg',
+'cards/9S.jpg',
+'cards/8H.jpg',
+'cards/7S.jpg',
+'cards/6H.jpg',
+]
+
+let shuffleBtn = document.getElementById('shuffleBtn');
+shuffleBtn.addEventListener('click', shuffle)
+
+img1.addEventListener('click', function() {
+	img1.src = cardRef[deck[0]];
+	speed();
+});
+img2.addEventListener('click', function() {
+	img2.src = cardRef[deck[1]];
+	speed();
+});
+img3.addEventListener('click', function() {
+	img3.src =cardRef[deck[2]];
+	speed();
+});
+img4.addEventListener('click', function() {
+	img4.src = cardRef[deck[3]];
+	speed();
+});
+img5.addEventListener('click', function() {
+	img5.src = cardRef[deck[4]];
+	speed();
+});
+img6.addEventListener('click', function() {
+	img6.src = cardRef[deck[5]];
+	speed();
+});
+img7.addEventListener('click', function() {
+	img7.src = cardRef[deck[6]];
+	speed();
+});
+img8.addEventListener('click', function() {
+	img8.src = cardRef[deck[7]];
+	speed();
+});
+img9.addEventListener('click', function() {
+	img9.src = cardRef[deck[8]];
+	speed();
+});
+img10.addEventListener('click', function() {
+	img10.src = cardRef[deck[9]];
+	speed();
+});
+img11.addEventListener('click', function() {
+	img11.src = cardRef[deck[10]];
+	speed();
+});
+img12.addEventListener('click', function() {
+	img12.src = cardRef[deck[11]];
+	speed();
+});
+img13.addEventListener('click', function() {
+	img13.src = cardRef[deck[12]];
+	speed();
+});
+img14.addEventListener('click', function() {
+	img14.src = cardRef[deck[13]];
+	speed();
+});
+img15.addEventListener('click', function() {
+	img15.src = cardRef[deck[14]];
+	speed();
+});
+img16.addEventListener('click', function() {
+	img16.src = cardRef[deck[15]];
+	speed();
+});
+img17.addEventListener('click', function() {
+	img17.src = cardRef[deck[16]];
+	speed();
+});
+img18.addEventListener('click', function() {
+	img18.src = cardRef[deck[17]];
+	speed();
+});
+
+function speed() {
+	setTimeout(changeBack, 3000);
+}
+
+function changeBack() {
+	for (var i = 1; i < 19; i++) {
+		eval('img' + i + ".src='cards/BC.jpg';");
+	}
+}
+
+//shuffle(cards);
+
+//console.log('It is connected');
+
+//let cards = [ '8H', '9S', '10H', 'JS', 'QH', 'KS' ];
+
+//let displayedCardsOrder = [];
 
 /*
 function shuffle(array) {
@@ -20,10 +170,7 @@ function shuffle(array) {
 	let result = "img13.src='cards/" + cards[randomNumber] + ".jpg'";
 	eval(result);
 }
-*/
 
-let displayedCardsOrder = [];
-/*
 function shuffleCards(array) {
 	let randomNumber = Math.floor(Math.random() * array.length);
 	//while the sum of the new array list is not equal to the new array list - keep picking new random numbers and adding them to the array
@@ -56,68 +203,3 @@ shuffleBtn.addEventListener('click', function() {
 	shuffleCards;
 });
 */
-
-function init() {}
-
-//shuffle(cards);
-
-img1.addEventListener('click', function() {
-	img1.src = 'cards/2H.jpg';
-	speed();
-});
-img2.addEventListener('click', function() {
-	img2.src = 'cards/3S.jpg';
-	speed();
-});
-img3.addEventListener('click', function() {
-	img3.src = 'cards/4H.jpg';
-	speed();
-});
-img4.addEventListener('click', function() {
-	img4.src = 'cards/5S.jpg';
-	speed();
-});
-img5.addEventListener('click', function() {
-	img4.src = 'cards/6H.jpg';
-	speed();
-});
-img6.addEventListener('click', function() {
-	img6.src = 'cards/7S.jpg';
-	speed();
-});
-img7.addEventListener('click', function() {
-	img7.src = 'cards/8H.jpg';
-	speed();
-});
-img8.addEventListener('click', function() {
-	img8.src = 'cards/9S.jpg';
-	speed();
-});
-img9.addEventListener('click', function() {
-	img9.src = 'cards/10H.jpg';
-	speed();
-});
-img10.addEventListener('click', function() {
-	img10.src = 'cards/JS.jpg';
-	speed();
-});
-img11.addEventListener('click', function() {
-	img11.src = 'cards/QH.jpg';
-	speed();
-});
-img12.addEventListener('click', function() {
-	img12.src = 'cards/KS.jpg';
-	speed();
-});
-
-function speed() {
-	setTimeout(changeBack, 3000);
-}
-
-function changeBack() {
-	for (var i = 1; i < 13; i++) {
-		eval('img' + i + ".src='cards/BC.jpg';");
-	}
-}
-
-console.log('It is connected');
