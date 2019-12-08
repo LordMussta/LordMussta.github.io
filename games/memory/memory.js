@@ -138,7 +138,7 @@ function changeTwoBack(image1, image2) {
 	setTimeout(() => {
 		eval('img' + image1 + ".src='cards/BC.jpg';");
 		eval('img' + image2 + ".src='cards/BC.jpg';");
-	}, 1500);
+	}, 500);
 }
 
 function checkCards(imageNumber, cardImage) {
@@ -160,6 +160,7 @@ function checkCards(imageNumber, cardImage) {
 			}
 			break;
 		case 2:
+			cardsFlipped = 3;
 			console.log('You have already got two cards flipped at the moment.');
 			break;
 		default:
