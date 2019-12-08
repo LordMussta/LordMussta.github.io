@@ -138,7 +138,7 @@ function changeTwoBack(image1, image2) {
 	setTimeout(() => {
 		eval('img' + image1 + ".src='cards/BC.jpg';");
 		eval('img' + image2 + ".src='cards/BC.jpg';");
-	}, 500);
+	}, 1250);
 }
 
 function checkCards(imageNumber, cardImage) {
