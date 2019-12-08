@@ -1,7 +1,5 @@
 body {
-margin: 20px;
 background-color: #202020;
-color: white;
 }
 
 h1 {
@@ -28,12 +26,4 @@ align-items: center;
 img {
 height: 200px;
 width: 130px;
-}
-
-.showCard {
-
-}
-
-.backCard {
-
 }

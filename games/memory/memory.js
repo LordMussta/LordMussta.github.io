@@ -26,9 +26,6 @@ var imageNumber;
 var image1;
 var image2;
 var score;
-
-//function init() {}
-
 var deck = [];
 
 function shuffle() {
@@ -47,7 +44,6 @@ function shuffle() {
 			deck.push(randomNumber);
 		}
 	}
-	console.log(deck);
 	return deck;
 }
 
@@ -79,88 +75,58 @@ shuffleBtn.addEventListener('click', shuffle);
 
 img1.addEventListener('click', function() {
 	checkCards(1, cardRef[deck[0]]);
-	console.log(cardRef[deck[0]]);
-	//img1.src = cardRef[deck[0]];
-	//speed();
 });
 img2.addEventListener('click', function() {
 	checkCards(2, cardRef[deck[1]]);
-	console.log(cardRef[deck[1]]);
-	//img2.src = cardRef[deck[1]];
-	//speed();
 });
 img3.addEventListener('click', function() {
 	checkCards(3, cardRef[deck[2]]);
-	console.log(cardRef[deck[2]]);
-	//img3.src = cardRef[deck[2]];
-	//speed();
 });
 img4.addEventListener('click', function() {
 	checkCards(4, cardRef[deck[3]]);
-	//speed();
 });
 img5.addEventListener('click', function() {
 	checkCards(5, cardRef[deck[4]]);
-	//speed();
 });
 img6.addEventListener('click', function() {
 	checkCards(6, cardRef[deck[5]]);
-	//speed();
 });
 img7.addEventListener('click', function() {
 	checkCards(7, cardRef[deck[6]]);
-	//speed();
 });
 img8.addEventListener('click', function() {
 	checkCards(8, cardRef[deck[7]]);
-	//speed();
 });
 img9.addEventListener('click', function() {
 	checkCards(9, cardRef[deck[8]]);
-	//speed();
 });
 img10.addEventListener('click', function() {
 	checkCards(10, cardRef[deck[9]]);
-	//speed();
 });
 img11.addEventListener('click', function() {
 	checkCards(11, cardRef[deck[10]]);
-	//speed();
 });
 img12.addEventListener('click', function() {
 	checkCards(12, cardRef[deck[11]]);
-	//speed();
 });
 img13.addEventListener('click', function() {
 	checkCards(13, cardRef[deck[12]]);
-	//speed();
 });
 img14.addEventListener('click', function() {
 	checkCards(14, cardRef[deck[13]]);
-	//speed();
 });
 img15.addEventListener('click', function() {
 	checkCards(15, cardRef[deck[14]]);
-	//speed();
 });
 img16.addEventListener('click', function() {
 	checkCards(16, cardRef[deck[15]]);
-	//speed();
 });
 img17.addEventListener('click', function() {
 	checkCards(17, cardRef[deck[16]]);
-	//speed();
 });
 img18.addEventListener('click', function() {
 	checkCards(18, cardRef[deck[17]]);
-	//speed();
 });
-
-/*
-function speed(image1, image2) {
-	setTimeout(changeTwoBack(image1, image2), 3000);
-}
-*/
 
 function changeAllBack() {
 	for (var i = 1; i < 19; i++) {
@@ -173,15 +139,9 @@ function changeTwoBack(image1, image2) {
 		eval('img' + image1 + ".src='cards/BC.jpg';");
 		eval('img' + image2 + ".src='cards/BC.jpg';");
 	}, 1500);
-
-	console.log(image1);
-	console.log(image2);
 }
 
 function checkCards(imageNumber, cardImage) {
-	console.log(cardsFlipped);
-	//warning.innerHTML = '';
-	//message.innerHTML = '';
 	switch (cardsFlipped) {
 		case 0:
 			cardsFlipped = 1;
@@ -207,14 +167,14 @@ function checkCards(imageNumber, cardImage) {
 			break;
 	}
 }
-Number;
+
+//Number;
+
 function checkForMatch(one, two, image1, image2) {
 	if (one != two) {
-		//warning.innerHTML = 'They do not match!';
 		cardsFlipped = 0;
 		changeTwoBack(image1, image2);
 	} else {
-		//message.innerHTML = 'They match!';
 		score = score + 1;
 		displayScore.innerHTML = score;
 		cardsFlipped = 0;
