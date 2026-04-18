@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Dashboard — 2026-04-18</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<style>
+  body { background: lightsteelblue; }
+  .navbar { background-color: #191970 !important; }
+  .card { margin-bottom: 1rem; border: none; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+  .card-header { background-color: #191970; color: white; font-weight: 600; }
+  .stat-val { font-size: 1.5rem; font-weight: 700; color: #191970; }
+  .stat-lbl { font-size: 0.75rem; color: #666; text-transform: uppercase; }
+  .note { background: #fff3cd; border-radius: 6px; padding: 8px 14px; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="/games.html">Games</a></li>
+      <li class="nav-item"><a class="nav-link" href="/education.html">Education</a></li>
+      <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+      <li class="nav-item active"><a class="nav-link" href="/dashboard.html">Dashboard</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid mt-4">
+  <div class="alert alert-info">
+    <i class="fas fa-info-circle"></i>
+    This is a daily snapshot updated at 5am. For live charts and habit tracking, access the
+    <strong>full dashboard</strong> at <code>http://raspberrypi.local:5000</code> on your home network.
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-cloud-sun"></i> Weather — 2026-04-18</div>
+        <div class="card-body">
+        <div class="row text-center mb-3">
+          <div class="col"><div class="stat-val">16.9–30.0°C</div><div class="stat-lbl">Temp</div></div>
+          <div class="col"><div class="stat-val">0.0mm</div><div class="stat-lbl">Rain</div></div>
+          <div class="col"><div class="stat-val">87.0%</div><div class="stat-lbl">Humidity</div></div>
+          <div class="col"><div class="stat-val">17.0 km/h E</div><div class="stat-lbl">Wind</div></div>
+        </div><table class='table table-sm'><thead><tr><th>Date</th><th>Temp</th><th>Rain</th></tr></thead><tbody><tr><td>04-19</td><td>15.2–27.8°C</td><td>0.0mm</td></tr><tr><td>04-20</td><td>11.6–28.5°C</td><td>0.0mm</td></tr><tr><td>04-21</td><td>12.6–26.9°C</td><td>0.0mm</td></tr></tbody></table></div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-chart-line"></i> Shares</div>
+        <div class="card-body">
+          <table class="table table-sm mb-0">
+            <thead><tr><th>Symbol</th><th>Close</th></tr></thead>
+            <tbody><tr><td colspan='2'>No data yet</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-gas-pump"></i> Cheapest Fuel — Ipswich</div>
+        <div class="card-body"><ol><li>No data yet</li></ol></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-lightbulb"></i> Daily Tip</div>
+        <div class="card-body"><blockquote class="blockquote mb-0"><p>Use specific, detailed prompts — vague input produces vague output.</p></blockquote></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-book"></i> New Books</div>
+        <div class="card-body"><ul><li>No new books recently</li></ul></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header"><i class="fas fa-robot"></i> AI Developments</div>
+        <div class="card-body"><ul><li><strong>The creator of Claude Code just revealed his workflow, and developers are losing their minds</strong> <small>(AI | VentureBeat)</small><br><small>When the creator of the world&#x27;s most advanced coding agent speaks, Silicon Valley doesn&#x27;t just listen — it takes notes.For the past week, th...</small></li><li><strong>Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment</strong> <small>(AI | VentureBeat)</small><br><small>Nous Research, the open-source artificial intelligence startup backed by crypto venture firm Paradigm, released a new competitive programming model on...</small></li><li><strong>Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required</strong> <small>(AI | VentureBeat)</small><br><small>Anthropic released Cowork on Monday, a new AI agent capability that extends the power of its wildly successful Claude Code tool to non-technical users...</small></li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
