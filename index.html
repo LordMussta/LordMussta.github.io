@@ -58,19 +58,19 @@
 	</p>
 	<p><b>25 August 2026</b>
 		<br />Lost a weekend to Warcraft III: Reforged (Legacy client) refusing to launch cleanly through Lutris/Wine, and to its cutscenes playing back in the wrong screen quadrant. Turned out to be two unrelated bugs - a launch crash, and a genuine upstream bug in Wine's video renderer that needed an actual patch to Wine itself. Wrote the whole investigation up in the repo in case it saves someone else the same weekend.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/Warcraft3_Legacy_Wine_VideoFix">Warcraft3_Legacy_Wine_VideoFix</a>
+		<br /><b>Repo: </b>Warcraft3_Legacy_Wine_VideoFix
 	</p>
 	<p><b>9 August 2026</b>
 		<br />Built LAN Devices, a companion app to the SSH Manager below - a small dark-themed desktop GUI that scans the local network and lists every device it finds (name, IP, MAC, vendor), letting you tag your own devices with nicknames that stick around between scans.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/LAN_Devices">LAN_Devices</a>
+		<br /><b>Repo: </b>LAN_Devices
 	</p>
 	<p><b>15 July 2026</b>
 		<br />Built D2 Save Stats, an Electron app that reads a classic (pre-Resurrected) Diablo II character save file (<code>.d2s</code>) and formats stats, skills, gear and quest progress as plain text you can paste straight into a chat window - handy for sharing a build without screenshotting half a dozen inventory screens.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/d2-stats-gui">d2-stats-gui</a>
+		<br /><b>Repo: </b>d2-stats-gui
 	</p>
 	<p><b>28 April 2026</b>
 		<br />Castle of Doom - my third attempt at that same story I first wrote back in 2018, this time as a proper Android app: Kotlin + Jetpack Compose for the UI, with the actual narrative written in the Ink scripting language and compiled in as story data. Also got a save/resume system in via Room.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/castle-of-doom">castle-of-doom</a>
+		<br /><b>Repo: </b>castle-of-doom
 	</p>
 	<p><b>25 April 2026</b>
 		<br />Built Whitespace Stripper, a tiny Ubuntu desktop utility that solves an annoyance I kept running into: multi-line commands copied out of AI tools like Claude Code often carry leading whitespace that breaks the moment you paste them into a terminal (Python throws an IndentationError, for instance). Paste it in, it strips the leading/trailing whitespace off every line, copy it back out.
@@ -78,27 +78,27 @@
 	</p>
 	<p><b>19 April 2026</b>
 		<br />Built SSH Manager - a lightweight desktop GUI for Linux that saves a list of SSH hosts (label, user, host/IP, port) and lets me connect to any of them in one click from a dropdown, password prompt and all, instead of digging back through terminal history every time.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/SSH_manager">SSH_manager</a>
+		<br /><b>Repo: </b>SSH_manager
 	</p>
 	<p><b>19 April 2026</b>
 		<br />Published my first app to Google Play: SubSlayer, an offline-first Android subscription tracker built in Kotlin. The idea is simple - log every subscription with its price and billing cycle, then mark each one Keep, Review or Kill. Anything marked Kill automatically floats to the top sorted by price, so the most expensive things to cut are staring right at you. It fires reminder notifications at 7, 3, 2, 1 and 0 days before a charge (but only for anything you've flagged Review or Kill), shows an estimated monthly total across everything, and stores it all locally with Room - no account, no server, no syncing.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/Subscription_tracker_kotlin">Subscription_tracker_kotlin</a>
+		<br /><b>Repo: </b>Subscription_tracker_kotlin
 	</p>
 	<p><b>18 April 2026</b>
 		<br />This is around when I started pairing with Claude Code on a lot of my own projects, and the pace picked up fast. First up: a Raspberry Pi "Personal Operating System" - a Flask dashboard on my home network paired with a Telegram bot that sends me a morning digest (stocks on weekdays, economic news on Sundays, a tech headline, a rotating book teaser) and a midday news round-up. It's grown to cover weather (current conditions, forecast, rainfall charts), daily habit tracking (exercise, mood, diet, journal entries), and a full Fitbit/Google Health sync that pulls sleep, steps, resting heart rate, HRV and SpO2 - including a proper multi-lane sleep hypnogram and a locally-computed sleep score. There's even a "temporarily expose this to the internet" toggle via Tailscale Funnel, with a password gate and an auto-expiring link, for when I want to check something from outside the house. What started as a daily digest script has basically become a personal life dashboard.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/AI_Bot_Dashbaord">AI_Bot_Dashbaord</a>
+		<br /><b>Repo: </b>AI_Bot_Dashbaord
 	</p>
 	<p><b>26 December 2025</b>
 		<br />Started learning Kotlin properly by building a simple rock-paper-scissors game - a warm-up before jumping into proper Android app development.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/kotlin_rock_paper_scissors">kotlin_rock_paper_scissors</a>
+		<br /><b>Repo: </b>kotlin_rock_paper_scissors
 	</p>
 	<p><b>17 July 2025</b>
 		<br />Dug the old Raspberry Pi electronics kit back out and had another go, this time wiring up a DHT temperature/humidity sensor and a small OLED screen, with a buzzer playing a little tune through it all.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/Electronics-Projects">Electronics-Projects</a>
+		<br /><b>Repo: </b>Electronics-Projects
 	</p>
 	<p><b>17 June 2024</b>
 		<br />Two Python game experiments back to back: a turtle-graphics game with sound effects for movement, crashes and reaching the goal, and a small Pygame project with collectible sprites - deliberately kept the old version alongside a refactored rewrite so I could compare the two.
-		<br /><b>Repos: </b><a href="https://github.com/LordMussta/turtleGame">turtleGame</a>, <a href="https://github.com/LordMussta/mygame-pygame">mygame-pygame</a>
+		<br /><b>Repos: </b>turtleGame, mygame-pygame
 	</p>
 	<p><b>15 October 2023</b>
 		<br />Built a terminal clone of Yahtzee in Python, complete with ASCII-art banners via pyfiglet. Still has a couple of known bugs on the to-do list - an occasional crash mid-game and a high-score save that doesn't always stick.
@@ -106,30 +106,30 @@
 	</p>
 	<p><b>9 September 2023</b>
 		<br />Took on some more "real world" web work: a business site for SMY Enterprises, a general-purpose Dynamic Website Template I could reuse for future client sites, and Tech Mussta, a site about coding, electronics and Linux.
-		<br /><b>Repos: </b><a href="https://github.com/LordMussta/SMYEnterprises">SMYEnterprises</a>, <a href="https://github.com/LordMussta/DynamicWebsiteTemplate">DynamicWebsiteTemplate</a>, <a href="https://github.com/LordMussta/Tech_Mussta_Website">Tech_Mussta_Website</a>
+		<br /><b>Repos: </b>SMYEnterprises, DynamicWebsiteTemplate, Tech_Mussta_Website
 	</p>
 	<p><b>27 February 2023</b>
 		<br />Went back to my roots with text adventures: Messy House, a tidy-up-the-house game with a typewriter text effect, and textGame - a reboot of the original Castle of Doom story, my second attempt at bringing that 2018 game back to life.
-		<br /><b>Repos: </b><a href="https://github.com/LordMussta/messyHouse">messyHouse</a>, <a href="https://github.com/LordMussta/textGame">textGame</a>
+		<br /><b>Repos: </b>messyHouse, textGame
 	</p>
 	<p><b>17 May 2022</b>
 		<br />Built a Tkinter unit converter app - more practice with Python GUIs after the greetings app from last year.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/Tk-converter">Tk-converter</a>
+		<br /><b>Repo: </b>Tk-converter
 	</p>
 	<p><b>8 March 2022</b>
 		<br />Started my "main" word-based story game, python-word-quest - a text adventure I keep coming back to and adding to over time.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/python-word-quest">python-word-quest</a>
+		<br /><b>Repo: </b>python-word-quest
 	</p>
 	<p><b>29 January 2022</b>
 		<br />Spent a frustrating but educational evening getting an old version of my portfolio site running on Heroku. The fix turned out to be two small things: Heroku expects your entry file to be called <code>app.py</code> (because the Procfile says <code>app:app</code>), and I'd left <code>host='0.0.0.0'</code> in <code>app.run()</code> from developing on my iPad. Fixed both, actually read <code>heroku logs --tail</code> properly this time, and it deployed fine.
 	</p>
 	<p><b>19 December 2021</b>
 		<br />Took on the "100 Days of Code" challenge to build a daily coding habit.
-		<br /><b>Repo: </b><a href="https://github.com/LordMussta/100_days_of_code">100_days_of_code</a>
+		<br /><b>Repo: </b>100_days_of_code
 	</p>
 	<p><b>4 June 2021</b>
 		<br />Spent a couple of months building small terminal games and utilities in Python to cement the fundamentals: BlackJack, Hangman, a Harry Potter quiz, a contact book app, and Monster Fighter - a simple text game built around Python classes.
-		<br /><b>Repos: </b><a href="https://github.com/LordMussta/BlackJack">BlackJack</a>, <a href="https://github.com/LordMussta/Hangman">Hangman</a>, <a href="https://github.com/LordMussta/HarryPotterQuiz">HarryPotterQuiz</a>, <a href="https://github.com/LordMussta/contactbook">contactbook</a>, <a href="https://github.com/LordMussta/monster_fighter">monster_fighter</a>
+		<br /><b>Repos: </b>BlackJack, Hangman, HarryPotterQuiz, contactbook, monster_fighter
 	</p>
 	<p><b>5 Jan 2021</b>
 		<br />After Christmas I picked up a book on Python development from the library. It had a section in the back about developing graphical user interfaces in python using the Tkinter library. It seemed fairly easy and gave it a go and have been enjoying tinkering with this library.
