@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+	<title>Boardgames - The Macey Portfolio</title>
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
+	<link rel="icon" href="/images/iconFile.ICO" type="image/ico" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+</head>
+
+
+<body style="background-color: lightsteelblue">
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
+	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link active" href="/games.html">Games</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/education.html">Education</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/about.html">About</a>
+			</li>
+<li>
+				<h4><span style="color: white;"></span></h4>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="jumbotron">
+	<div style="text-align: center" class="container">
+		<h1>Boardgames</h1>
+	</div>
+</div>
+
+<!-- navbar and title above this point -->
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h4 class="lead"><strong>Private</strong></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col ml-5">
+			<p>These boardgame clones are for personal use only, so this page is password protected.</p>
+			<form id="unlock" class="form-inline" autocomplete="off">
+				<input id="password" type="password" class="form-control mr-2" placeholder="Password" autofocus>
+				<button type="submit" class="btn btn-primary btn-sm">Enter</button>
+			</form>
+			<p id="wrong" class="text-danger mt-2" style="display: none">Wrong password.</p>
+		</div>
+	</div>
+</div>
+
+<script>
+// The password is never stored here: the games live in a folder named after
+// the first 16 hex characters of the password's SHA-256 hash.
+document.getElementById('unlock').addEventListener('submit', async function (event) {
+	event.preventDefault();
+	const text = document.getElementById('password').value.trim().toLowerCase();
+	const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+	const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+	const page = '/games/boardgames/' + hex.slice(0, 16) + '/index.html';
+	const response = await fetch(page, {method: 'HEAD'});
+	if (response.ok) {
+		window.location.href = page;
+	} else {
+		document.getElementById('wrong').style.display = 'block';
+	}
+});
+</script>
+
+<!-- footer and files below this point -->
+
+<div style="padding-bottom: 100px"></div>
+
+<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
+	<b>The Macey Portfolio</b>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
