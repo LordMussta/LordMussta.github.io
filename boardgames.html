@@ -2,150 +2,530 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-	<title>Boardgames - The Macey Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game Library - The Macey Portfolio</title>
 	<meta name="robots" content="noindex, nofollow">
 	<link rel="apple-touch-icon" sizes="57x57" href="/images/sandbox.jpg">
 	<link rel="icon" href="/images/iconFile.ICO" type="image/ico" />
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-	<!-- Bootstrap core CSS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Material Design Bootstrap -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Permanent+Marker&family=Yellowtail&display=swap" rel="stylesheet">
+
+<style>
+:root {
+	--wall: #1a110c;
+	--wall-light: #24170f;
+	--plank: #5a3a22;
+	--plank-dark: #2e1c10;
+	--amber: #ffb347;
+	--neon: #ff5e8a;
+	--cream: #f3e6d0;
+	--muted: #c9b597;
+	--card: #f6edd9;
+	--ink: #2a1d14;
+	--box-h: clamp(170px, 30vw, 290px);
+	--plank-h: 26px;
+	--row-h: calc(var(--box-h) + 80px);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--wall); }
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	color: var(--cream);
+	font: 19px/1.6 "Lora", Georgia, serif;
+	/* Lamp glow over a wood-panelled wall. */
+	background:
+		radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255, 170, 80, 0.22), transparent 70%),
+		radial-gradient(ellipse 120% 80% at 50% 120%, rgba(0, 0, 0, 0.7), transparent 60%),
+		repeating-linear-gradient(90deg, var(--wall) 0 118px, #120b07 118px 121px, var(--wall-light) 121px 240px, #120b07 240px 243px);
+	background-attachment: fixed;
+}
+
+/* Faint film grain over everything. */
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	opacity: 0.08;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a { color: var(--amber); }
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 24px;
+	font-size: 16px;
+}
+.topbar a { color: var(--muted); text-decoration: none; }
+.topbar a:hover { color: var(--amber); }
+
+/* ---- Neon sign ---- */
+.sign {
+	text-align: center;
+	padding: 24px 16px 8px;
+}
+.sign h1 {
+	margin: 0;
+	font: 400 clamp(56px, 11vw, 120px)/1 "Yellowtail", cursive;
+	color: #fff4f7;
+	text-shadow:
+		0 0 4px #fff,
+		0 0 12px var(--neon),
+		0 0 28px var(--neon),
+		0 0 60px var(--neon),
+		0 0 100px rgba(255, 94, 138, 0.6);
+	animation: flicker 7s infinite;
+}
+.sign .sub {
+	display: inline-block;
+	margin-top: 10px;
+	font: 400 clamp(20px, 3.4vw, 30px)/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.35em;
+	color: #fff2d6;
+	text-shadow: 0 0 6px var(--amber), 0 0 18px var(--amber), 0 0 40px rgba(255, 179, 71, 0.5);
+}
+@keyframes flicker {
+	0%, 18%, 22%, 62%, 64%, 100% { opacity: 1; }
+	20%, 63% { opacity: 0.55; }
+}
+
+/* ---- Members-only gate ---- */
+.gate {
+	display: flex;
+	justify-content: center;
+	padding: 40px 16px 80px;
+}
+.member-card {
+	width: min(440px, 100%);
+	background: var(--card);
+	color: var(--ink);
+	border-radius: 10px;
+	padding: 26px 28px 24px;
+	box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.3);
+	transform: rotate(-1.5deg);
+	position: relative;
+}
+.member-card::before {
+	/* Coloured stripe across the top of the card. */
+	content: "";
+	position: absolute;
+	left: 0; right: 0; top: 0;
+	height: 14px;
+	border-radius: 10px 10px 0 0;
+	background: repeating-linear-gradient(90deg, #c0392b 0 40px, #e67e22 40px 80px, #f1c40f 80px 120px, #2980b9 120px 160px);
+}
+.member-card h2 {
+	margin: 8px 0 4px;
+	font: 400 34px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.08em;
+}
+.member-card p { margin: 0 0 16px; font-size: 17px; }
+.member-card label {
+	display: block;
+	font: 400 18px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.12em;
+	margin-bottom: 6px;
+}
+.member-card .row { display: flex; gap: 10px; }
+.member-card input {
+	flex: 1;
+	min-width: 0;
+	font: 20px "Lora", serif;
+	padding: 10px 12px;
+	border: 2px solid var(--ink);
+	border-radius: 6px;
+	background: #fffaf0;
+	color: var(--ink);
+}
+.btn {
+	font: 400 22px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.1em;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 6px;
+	background: #b8322a;
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+}
+.btn:hover, .btn:focus-visible { background: #d63c32; }
+.btn.secondary { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.wrong {
+	margin-top: 12px;
+	font-family: "Permanent Marker", cursive;
+	color: #b8322a;
+	min-height: 1.6em;
+}
+
+/* ---- Shelves ---- */
+.library { padding: 10px 16px 60px; }
+.unit {
+	/* The bookcase frame; each shelf inside draws its own planks. */
+	max-width: 1100px;
+	margin: 0 auto;
+	border: 16px solid var(--plank-dark);
+	border-top-width: 20px;
+	border-radius: 4px;
+	background: linear-gradient(180deg, #0d0806, #1c120b 60%, #0d0806);
+	box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(0, 0, 0, 0.6), 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+.shelf {
+	/* A plank at the bottom of every row, so wrapped rows get one too. */
+	position: relative;
+	padding: 0 22px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0 44px;
+	background: repeating-linear-gradient(180deg,
+		transparent 0 calc(var(--row-h) - var(--plank-h)),
+		var(--plank) calc(var(--row-h) - var(--plank-h)) calc(var(--row-h) - var(--plank-h) + 4px),
+		#7a5233 calc(var(--row-h) - var(--plank-h) + 4px) calc(var(--row-h) - 8px),
+		#3a2414 calc(var(--row-h) - 8px) var(--row-h));
+}
+/* Category tag hanging off the front of the shelf's bottom plank. */
+.shelf-label {
+	position: absolute;
+	left: 28px;
+	bottom: -26px;
+	margin: 0;
+	padding: 6px 16px 4px;
+	font: 400 24px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.15em;
+	color: #1b120c;
+	background: var(--amber);
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 179, 71, 0.3);
+	z-index: 2;
+}
+.shelf:last-child { margin-bottom: 40px; }
+.shelf-label.soon { background: #8fb3c9; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), 0 0 18px rgba(143, 179, 201, 0.25); }
+.slot {
+	height: var(--row-h);
+	padding-bottom: calc(var(--plank-h) - 2px);
+	display: flex;
+	align-items: flex-end;
+}
+.box {
+	position: relative;
+	display: block;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	transform-origin: 50% 100%;
+	transform: perspective(900px) rotateY(-8deg);
+	transition: transform 0.25s ease, filter 0.25s ease;
+	filter: brightness(0.88) saturate(0.95);
+}
+.box img {
+	display: block;
+	height: var(--box-h);
+	width: auto;
+	border-radius: 3px;
+	box-shadow:
+		6px 0 0 -1px rgba(0, 0, 0, 0.55),
+		-10px 6px 18px rgba(0, 0, 0, 0.75),
+		0 2px 0 rgba(0, 0, 0, 0.6);
+}
+/* Sheen across the box lid. */
+.box::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 3px;
+	background: linear-gradient(115deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.25) 100%);
+	pointer-events: none;
+}
+.box:hover, .box:focus-visible {
+	transform: perspective(900px) rotateY(0deg) translateY(-12px) scale(1.04);
+	filter: brightness(1.05);
+	outline: none;
+}
+.box:focus-visible img { box-shadow: 0 0 0 4px var(--amber), -10px 6px 18px rgba(0, 0, 0, 0.75); }
+
+.sticker {
+	position: absolute;
+	top: -12px;
+	right: -12px;
+	width: 62px;
+	height: 62px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: #ffd23f;
+	color: #b8322a;
+	font: 400 24px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.05em;
+	transform: rotate(14deg);
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+.banner {
+	position: absolute;
+	left: -6px; right: -6px;
+	top: 42%;
+	padding: 6px 0 4px;
+	text-align: center;
+	background: #b8322a;
+	color: #fff;
+	font: 400 26px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.15em;
+	white-space: nowrap;
+	transform: rotate(-8deg);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+.box.soon img { filter: grayscale(0.35) brightness(0.8); }
+
+/* ---- Rental card (game details) ---- */
+dialog {
+	width: min(720px, calc(100% - 32px));
+	padding: 0;
+	border: none;
+	border-radius: 10px;
+	background: var(--card);
+	color: var(--ink);
+	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+dialog::backdrop { background: rgba(10, 6, 3, 0.8); }
+.rental {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 24px;
+	padding: 24px;
+}
+.rental img {
+	height: 300px;
+	width: auto;
+	max-width: 100%;
+	border-radius: 4px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.rental h2 {
+	margin: 0 0 6px;
+	font: 400 40px/1 "Bebas Neue", sans-serif;
+	letter-spacing: 0.05em;
+}
+.rental .meta {
+	margin: 0 0 12px;
+	font-style: italic;
+	color: #6b5541;
+}
+.rental p { margin: 0 0 12px; font-size: 18px; }
+.rental .note { font-size: 16px; color: #6b5541; }
+.rental .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+footer {
+	text-align: center;
+	padding: 20px 16px 30px;
+	font-size: 15px;
+	color: var(--muted);
+}
+
+[hidden] { display: none !important; }
+
+@media (max-width: 600px) {
+	body { font-size: 18px; }
+	.topbar { padding: 12px 16px; }
+	.library { padding: 10px 8px 60px; }
+	.unit { border-width: 10px; }
+	.shelf { padding: 0 12px; gap: 0 24px; }
+	.shelf-label { left: 14px; font-size: 20px; }
+	.rental { grid-template-columns: 1fr; justify-items: center; }
+	.rental img { height: 240px; }
+	.banner { font-size: 18px; letter-spacing: 0.1em; }
+	.sticker { width: 52px; height: 52px; font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sign h1 { animation: none; }
+	.box { transition: none; }
+}
+</style>
 </head>
 
+<body>
 
-<body style="background-color: lightsteelblue">
-
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191970;">
-	<a class="navbar-brand" href="/index.html"><span class="fas fa-code"></span> <b>The Macey Portfolio</b></a>  
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="/games.html">Games</a>
-			</li>
-			<li class="nav-item active">
-				<a class="nav-link active" href="/boardgames.html">Boardgames</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/education.html">Education</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/about.html">About</a>
-			</li>
-<li>
-				<h4><span style="color: white;"></span></h4>
-			</li>
-		</ul>
-	</div>
-</nav>
-
-<div class="jumbotron">
-	<div style="text-align: center" class="container">
-		<h1>Boardgames</h1>
-	</div>
+<div class="topbar">
+	<a href="/index.html">&larr; The Macey Portfolio</a>
+	<a href="#" id="lock" hidden>Lock the library</a>
 </div>
 
-<!-- navbar and title above this point -->
-<div class="container">
-	<div class="row">
-		<div class="col ml-5">
-			<p>3D clones of my favourite boardgames, built in the Godot game engine with Claude Code. They are for personal use only, so each game asks for a password.</p>
-		</div>
-	</div>
-</div>
+<header class="sign">
+	<h1>Game Library</h1>
+	<span class="sub">Boardgames &middot; Open late</span>
+</header>
 
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<br><h4 class="lead"><strong>Lords of Waterdeep</strong></h4>
+<!-- Members-only gate. The password is never stored here: the library lives in
+     a folder named after the first 16 hex characters of the password's SHA-256 hash. -->
+<section class="gate" id="gate" hidden>
+	<form class="member-card" id="unlock" autocomplete="off">
+		<h2>Members only</h2>
+		<p>3D clones of my favourite boardgames, built in Godot with Claude Code. They're for personal use, so please show your membership card.</p>
+		<label for="password">Password</label>
+		<div class="row">
+			<input id="password" type="password">
+			<button type="submit" class="btn">Enter</button>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col ml-5">
-			<p><a href="#" class="play" data-game="lords-of-waterdeep">Lords of Waterdeep</a>
-			<br /><i>Date Created: October 2026</i>
-			<br />A 3D clone of the Dungeons &amp; Dragons worker-placement boardgame. Play against three CPU opponents and choose each one's skill level (Okay, Average or Good) at the start of a game.
-			<br />Give it a moment to load the first time, as the card art takes a while to download.
-			</p>
-		</div>
-	</div>
-</div>
+		<div class="wrong" id="wrong" aria-live="polite"></div>
+	</form>
+</section>
 
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<br><h4 class="lead"><strong>Monopoly</strong></h4>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col ml-5">
-			<p><a href="#" class="play" data-game="monopoly">Monopoly</a>
-			<br /><i>Date Created: September 2026</i>
-			<br />A 3D Monopoly board, UK edition, with physical dice, CPU opponents, trading, auctions and save/load.
-			</p>
-		</div>
-	</div>
-</div>
+<main class="library" id="library" hidden></main>
 
-<!-- The password box, moved under whichever game was clicked. -->
-<form id="unlock" class="form-inline mb-3" autocomplete="off" style="display: none">
-	<input id="password" type="password" class="form-control form-control-sm mr-2" placeholder="Password">
-	<button type="submit" class="btn btn-primary btn-sm">Play</button>
-	<span id="wrong" class="text-danger ml-2" style="display: none">Wrong password.</span>
-</form>
+<dialog id="rental">
+	<div class="rental">
+		<img id="r-cover" alt="">
+		<div>
+			<h2 id="r-title"></h2>
+			<p class="meta" id="r-meta"></p>
+			<p id="r-blurb"></p>
+			<p class="note" id="r-note"></p>
+			<div class="actions">
+				<a class="btn" id="r-play" href="#">Play now</a>
+				<button class="btn secondary" id="r-close" type="button">Back to the shelf</button>
+			</div>
+		</div>
+	</div>
+</dialog>
+
+<footer>Personal-use clones of games I own. All box art belongs to its publishers.</footer>
 
 <script>
-// The password is never stored here: the games live in a folder named after
-// the first 16 hex characters of the password's SHA-256 hash.
+const KEY = 'boardgames-library';
+const gate = document.getElementById('gate');
 const form = document.getElementById('unlock');
 const input = document.getElementById('password');
 const wrong = document.getElementById('wrong');
-let game = '';
+const library = document.getElementById('library');
+const lock = document.getElementById('lock');
+const rental = document.getElementById('rental');
 
-document.querySelectorAll('.play').forEach(function (link) {
-	link.addEventListener('click', function (event) {
-		event.preventDefault();
-		game = link.dataset.game;
-		link.parentNode.after(form);
-		form.style.display = 'flex';
-		wrong.style.display = 'none';
-		input.value = '';
-		input.focus();
+function storageGet() {
+	try { return sessionStorage.getItem(KEY); } catch (e) { return null; }
+}
+function storageSet(value) {
+	try {
+		if (value) sessionStorage.setItem(KEY, value);
+		else sessionStorage.removeItem(KEY);
+	} catch (e) {}
+}
+
+async function hashOf(text) {
+	const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+	return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
+}
+
+// Returns true if a library exists for this key, and shows it.
+async function openLibrary(key) {
+	const base = '/games/boardgames/' + key + '/';
+	let data;
+	try {
+		const response = await fetch(base + 'library.json', {cache: 'no-cache'});
+		if (!response.ok) return false;
+		data = await response.json();
+	} catch (e) {
+		return false;
+	}
+	buildShelves(data, base);
+	storageSet(key);
+	gate.hidden = true;
+	library.hidden = false;
+	lock.hidden = false;
+	return true;
+}
+
+function el(tag, className, text) {
+	const node = document.createElement(tag);
+	if (className) node.className = className;
+	if (text) node.textContent = text;
+	return node;
+}
+
+function buildShelves(data, base) {
+	const unit = el('div', 'unit');
+	data.shelves.forEach(function (shelf) {
+		const section = el('section', 'shelf');
+		const soon = shelf.games.every(g => g.comingSoon);
+		shelf.games.forEach(function (game) {
+			const slot = el('div', 'slot');
+			const box = el('button', 'box' + (game.comingSoon ? ' soon' : ''));
+			box.type = 'button';
+			box.setAttribute('aria-label', game.title + (game.comingSoon ? ' (coming soon)' : ''));
+			const img = el('img');
+			img.src = base + game.cover;
+			img.alt = game.title + ' box';
+			box.append(img);
+			if (game.sticker) box.append(el('span', 'sticker', game.sticker));
+			if (game.comingSoon) box.append(el('span', 'banner', 'Coming soon'));
+			box.addEventListener('click', () => showRental(game, base));
+			slot.append(box);
+			section.append(slot);
+		});
+		section.append(el('h2', 'shelf-label' + (soon ? ' soon' : ''), shelf.label));
+		unit.append(section);
 	});
+	library.replaceChildren(unit);
+}
+
+function showRental(game, base) {
+	document.getElementById('r-cover').src = base + game.cover;
+	document.getElementById('r-cover').alt = game.title + ' box';
+	document.getElementById('r-title').textContent = game.title;
+	document.getElementById('r-meta').textContent =
+		[game.players, game.created ? 'Added ' + game.created : 'Coming soon'].filter(Boolean).join(' · ');
+	document.getElementById('r-blurb').textContent = game.blurb;
+	document.getElementById('r-note').textContent = game.note || '';
+	const play = document.getElementById('r-play');
+	play.hidden = !!game.comingSoon;
+	play.href = base + game.id + '/index.html';
+	rental.showModal();
+}
+
+document.getElementById('r-close').addEventListener('click', () => rental.close());
+rental.addEventListener('click', function (event) {
+	if (event.target === rental) rental.close();
 });
 
 form.addEventListener('submit', async function (event) {
 	event.preventDefault();
-	const text = input.value.trim().toLowerCase();
-	const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-	const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
-	const page = '/games/boardgames/' + hex.slice(0, 16) + '/' + game + '/index.html';
-	const response = await fetch(page, {method: 'HEAD'});
-	if (response.ok) {
-		window.location.href = page;
-	} else {
-		wrong.style.display = 'inline';
+	wrong.textContent = '';
+	const key = await hashOf(input.value.trim().toLowerCase());
+	if (!(await openLibrary(key))) {
+		wrong.textContent = "Sorry, that card isn't on our books.";
+		input.select();
 	}
 });
+
+lock.addEventListener('click', function (event) {
+	event.preventDefault();
+	storageSet(null);
+	library.hidden = true;
+	library.replaceChildren();
+	lock.hidden = true;
+	gate.hidden = false;
+	input.value = '';
+	input.focus();
+});
+
+(async function () {
+	const saved = storageGet();
+	if (saved && await openLibrary(saved)) return;
+	storageSet(null);
+	gate.hidden = false;
+	input.focus();
+})();
 </script>
-
-<!-- footer and files below this point -->
-
-<div style="padding-bottom: 100px"></div>
-
-<footer class="navbar justify-content-center" style="background-color: #191970; color: white; position: fixed; bottom: 0; left: 0; width: 100%">
-	<b>The Macey Portfolio</b>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>

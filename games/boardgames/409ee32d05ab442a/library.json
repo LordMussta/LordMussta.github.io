@@ -1,0 +1,40 @@
+{
+	"shelves": [
+		{
+			"label": "New Releases",
+			"games": [
+				{
+					"id": "lords-of-waterdeep",
+					"title": "Lords of Waterdeep",
+					"cover": "covers/lords-of-waterdeep.jpg",
+					"sticker": "New",
+					"created": "October 2026",
+					"players": "You + 3 CPU lords",
+					"blurb": "A 3D clone of the Dungeons & Dragons worker-placement boardgame. Play against three CPU opponents and choose each one's skill level (Okay, Average or Good) at the start of a game.",
+					"note": "Give it a moment to load the first time, as the card art takes a while to download."
+				},
+				{
+					"id": "monopoly",
+					"title": "Monopoly",
+					"cover": "covers/monopoly.jpg",
+					"created": "September 2026",
+					"players": "You + CPU opponents",
+					"blurb": "A 3D Monopoly board, UK edition, with physical dice, CPU opponents, trading, auctions and save/load."
+				}
+			]
+		},
+		{
+			"label": "Coming Soon",
+			"games": [
+				{
+					"id": "rivals-for-catan",
+					"title": "Rivals for Catan",
+					"cover": "covers/rivals-for-catan.jpg",
+					"comingSoon": true,
+					"players": "You vs 1 CPU rival",
+					"blurb": "The 2-player Catan card game, built in 2D with photos of my own cards. Still being finished."
+				}
+			]
+		}
+	]
+}
