@@ -216,6 +216,44 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
-	</body>
+	<!-- site: back button -->
+<style>
+#back-to-library {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+	padding: 6px 12px;
+	border-radius: 6px;
+	background: rgba(20, 12, 8, 0.6);
+	color: #f3e6d0;
+	font: 17px/1.2 Georgia, serif;
+	text-decoration: none;
+	opacity: 0.75;
+	transition: opacity 0.2s, background 0.2s;
+}
+#back-to-library:hover, #back-to-library:focus-visible, #back-to-library.confirm { opacity: 1; }
+#back-to-library.confirm { background: #b8322a; color: #fff; }
+</style>
+<a id="back-to-library" href="/boardgames.html">&larr; Library</a>
+<script>
+// First click asks, second click leaves, so a stray click doesn't end a game.
+(function () {
+	const link = document.getElementById('back-to-library');
+	let timer = null;
+	link.addEventListener('click', function (event) {
+		if (link.classList.contains('confirm')) return;
+		event.preventDefault();
+		link.classList.add('confirm');
+		link.textContent = 'Leave game? Click again';
+		timer = setTimeout(function () {
+			link.classList.remove('confirm');
+			link.innerHTML = '&larr; Library';
+		}, 3000);
+	});
+})();
+</script>
+<!-- /site: back button -->
+</body>
 </html>
 
